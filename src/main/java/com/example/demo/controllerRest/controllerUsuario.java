@@ -47,7 +47,8 @@ public class controllerUsuario {
 	
 	@PostMapping("/login")
 	public boolean login(@RequestBody usuario u) {
-        Optional<usuario> buscado = servicios.logeo(u.getEmail(),u.getPassword());
+		System.out.println("Email: "+u.getEmail() + " , Password: "+u.getPassword());
+		Optional<usuario> buscado = servicios.logeo(u.getEmail(),u.getPassword());
         
         if (buscado.isPresent()) {
             return true;
